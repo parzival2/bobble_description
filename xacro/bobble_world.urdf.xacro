@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<robot name ="bobblebot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<xacro:include filename="$(find bobble_description)/xacro/bobble.urdf.xacro" />
+
+</robot>
