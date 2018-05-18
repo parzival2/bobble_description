@@ -6,8 +6,8 @@
 
 	<link name="right_wheel_link">
 		<inertial>
-			<mass value="10.0"/>
-			<inertia ixx="0.02708333333" ixy="0.0" ixz="0.0" iyy="0.02708333333" iyz="0.0" izz="0.05"/>
+			<mass value="0.084"/>
+			<inertia ixx="0.00035" ixy="0.0" ixz="0.0" iyy="0.00035" iyz="0.0" izz="0.00035"/>
 		</inertial>
 		<visual>
 			<origin xyz="0.0 0.0 0.0" rpy="0.0 1.5707 -1.5707"/>
@@ -28,15 +28,14 @@
 		<selfCollide>true</selfCollide>
 	</gazebo>
 
-	<joint name="right_wheel_hinge" type="revolute">
+	<joint name="right_wheel_hinge" type="continuous">
 		<parent link="${parent}"/>
 		<child link="right_wheel_link"/>
 		<origin rpy="0 0 0" xyz="0.0 -0.1 0.05"/>
 		<axis xyz="0 1 0"/>
-		<limit effort="30" lower="-1000.0" upper="1000.0" velocity="2.0"/>
 		<!-- <safety_controller k_velocity="0.5"/> -->
 		<!-- <joint_properties damping="100.0" friction="1000.0" /> -->
-		<dynamics damping="0.9" friction="${3.0/7}"/>
+		<dynamics damping="0.0" friction="0.0"/>
 	</joint>
 
 	<transmission name="right_wheel_transmission">
