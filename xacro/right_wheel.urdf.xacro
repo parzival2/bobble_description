@@ -10,13 +10,13 @@
 			<inertia ixx="0.02708333333" ixy="0.0" ixz="0.0" iyy="0.02708333333" iyz="0.0" izz="0.05"/>
 		</inertial>
 		<visual>
-			<origin xyz="0.0 -0.1 0.05" rpy="0.0 1.5707 -1.5707"/>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 1.5707 -1.5707"/>
 			<geometry name="right_wheel_link_visual">
   				<mesh filename="package://bobble_description/meshes/wheel.dae" scale="1.0 1.0 1.0"/>
 			</geometry>
   		</visual>
 		<collision>
-			<origin xyz="0.0 -0.1 0.05" rpy="0.0 1.5707 -1.5707"/>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 1.5707 -1.5707"/>
             <geometry>
               <cylinder radius="0.05" length="0.05" />
             </geometry>
@@ -31,9 +31,9 @@
 	<joint name="right_wheel_hinge" type="revolute">
 		<parent link="${parent}"/>
 		<child link="right_wheel_link"/>
-		<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+		<origin rpy="0 0 0" xyz="0.0 -0.1 0.05"/>
 		<axis xyz="0 1 0"/>
-		<limit effort="30" lower="-2.6" upper="2.6" velocity="2.0"/>
+		<limit effort="30" lower="-1000.0" upper="1000.0" velocity="2.0"/>
 		<!-- <safety_controller k_velocity="0.5"/> -->
 		<!-- <joint_properties damping="100.0" friction="1000.0" /> -->
 		<dynamics damping="0.9" friction="${3.0/7}"/>
