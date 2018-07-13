@@ -25,7 +25,7 @@
 	</link>
 
 	<gazebo reference="left_wheel_link">
-		<selfCollide>true</selfCollide>
+		<selfCollide>false</selfCollide>
 	</gazebo>
 
 	<joint name="left_wheel_hinge" type="continuous">

@@ -26,7 +26,7 @@
 	</link>
 
 	<gazebo reference="bobble_chassis_link">
-		<selfCollide>true</selfCollide>
+		<selfCollide>false</selfCollide>
 	</gazebo>
 
 	</xacro:macro>
