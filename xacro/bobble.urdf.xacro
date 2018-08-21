@@ -26,7 +26,7 @@
       <alwaysOn>true</alwaysOn>
       <updateRate>100.0</updateRate>
       <bodyName>bno055_imu_link</bodyName>
-      <topicName>/bobble/bobble_balance_controller/imu_bosch</topicName>
+      <topicName>/imu_bosch/data</topicName>
       <gaussianNoise>0.02</gaussianNoise>
       <xyzOffsets>0 0 0</xyzOffsets>
       <rpyOffsets>0 0 0</rpyOffsets>
