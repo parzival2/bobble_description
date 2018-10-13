@@ -1,50 +1,53 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <root>
- <tabbed_widget name="Main Window" parent="main_window">
-  <plotmatrix rows="7" columns="1" tab_name="plot">
+ <tabbed_widget parent="main_window" name="Main Window">
+  <plotmatrix tab_name="plot" rows="7" columns="1">
    <plot row="0" col="0">
-    <range bottom="2.148951" left="47.310000" top="4.100043" right="52.310000"/>
+    <range left="0.000000" top="44.918486" bottom="-38.143237" right="4.999000"/>
     <limitY/>
-    <curve name="/bobble/bobble_balance_controller/bb_controller_status/Pitch" R="0" B="255" G="0"/>
+    <curve B="0" G="0" R="255" name="/bobble/bobble_balance_controller/bb_controller_status/TiltRate"/>
     <transform value="noTransform"/>
    </plot>
    <plot row="1" col="0">
-    <range bottom="-7.585824" left="47.310000" top="4.176665" right="52.310000"/>
+    <range left="0.000000" top="113.065814" bottom="-144.428172" right="4.999000"/>
     <limitY/>
-    <curve name="/bobble/bobble_balance_controller/bb_controller_status/PitchRate" R="255" B="255" G="0"/>
+    <curve B="0" G="0" R="255" name="/bobble/bobble_balance_controller/bb_controller_status/ForwardVelocity"/>
+    <curve B="0" G="128" R="128" name="/bobble/bobble_balance_controller/bb_controller_status/LeftMotorVelocity"/>
     <transform value="noTransform"/>
    </plot>
    <plot row="2" col="0">
-    <range bottom="-0.100000" left="47.310000" top="0.100000" right="52.310000"/>
+    <range left="0.000000" top="2.301584" bottom="-3.257354" right="4.999000"/>
     <limitY/>
-    <curve name="/bobble/bobble_balance_controller/bb_controller_status/LeftMotorEffortCmd" R="0" B="128" G="128"/>
-    <curve name="/bobble/bobble_balance_controller/bb_controller_status/RightMotorEffortCmd" R="160" B="164" G="160"/>
+    <curve B="0" G="0" R="255" name="/bobble/bobble_balance_controller/bb_controller_status/DesiredTilt"/>
+    <curve B="255" G="0" R="255" name="/bobble/bobble_balance_controller/bb_controller_status/Tilt"/>
     <transform value="noTransform"/>
    </plot>
    <plot row="3" col="0">
-    <range bottom="638.943065" left="47.310000" top="649.614369" right="52.310000"/>
+    <range left="0.000000" top="0.084000" bottom="-0.084000" right="4.999000"/>
     <limitY/>
-    <curve name="/bobble/bobble_balance_controller/bb_controller_status/LeftMotorPosition" R="160" B="164" G="160"/>
-    <curve name="/bobble/bobble_balance_controller/bb_controller_status/RightMotorPosition" R="128" B="0" G="128"/>
+    <curve B="164" G="160" R="160" name="/bobble/bobble_balance_controller/bb_controller_status/LeftMotorEffortCmd"/>
+    <curve B="0" G="128" R="128" name="/bobble/bobble_balance_controller/bb_controller_status/RightMotorEffortCmd"/>
     <transform value="noTransform"/>
    </plot>
    <plot row="4" col="0">
-    <range bottom="-0.146196" left="47.310000" top="5.354286" right="52.310000"/>
+    <range left="0.000000" top="147.202921" bottom="-187.291453" right="4.999000"/>
     <limitY/>
-    <curve name="/bobble/bobble_balance_controller/bb_controller_status/LeftMotorVelocity" R="255" B="0" G="0"/>
-    <curve name="/bobble/bobble_balance_controller/bb_controller_status/RightMotorVelocity" R="128" B="0" G="128"/>
+    <curve B="128" G="128" R="0" name="/bobble/bobble_balance_controller/bb_controller_status/LeftMotorVelocity"/>
+    <curve B="164" G="160" R="160" name="/bobble/bobble_balance_controller/bb_controller_status/RightMotorVelocity"/>
     <transform value="noTransform"/>
    </plot>
    <plot row="5" col="0">
-    <range bottom="2.388077" left="47.310000" top="2.907375" right="52.310000"/>
+    <range left="0.000000" top="0.084000" bottom="-0.084000" right="4.999000"/>
     <limitY/>
-    <curve name="/bobble/bobble_balance_controller/bb_controller_status/Roll" R="0" B="255" G="0"/>
+    <curve B="255" G="0" R="0" name="/bobble/bobble_balance_controller/bb_controller_status/HeadingEffort"/>
+    <curve B="0" G="128" R="0" name="/bobble/bobble_balance_controller/bb_controller_status/TiltEffort"/>
     <transform value="noTransform"/>
    </plot>
    <plot row="6" col="0">
-    <range bottom="-0.771208" left="47.310000" top="0.164719" right="52.310000"/>
+    <range left="0.000000" top="6.506719" bottom="-8.292991" right="4.999000"/>
     <limitY/>
-    <curve name="/bobble/bobble_balance_controller/bb_controller_status/Yaw" R="0" B="0" G="128"/>
+    <curve B="0" G="0" R="255" name="/bobble/bobble_balance_controller/bb_controller_status/DesiredVelocity"/>
+    <curve B="0" G="128" R="0" name="/bobble/bobble_balance_controller/bb_controller_status/ForwardVelocity"/>
     <transform value="noTransform"/>
    </plot>
   </plotmatrix>
