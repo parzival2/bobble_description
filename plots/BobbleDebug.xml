@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+ <tabbed_widget name="Main Window" parent="main_window">
+  <plotmatrix rows="7" columns="1" tab_name="plot">
+   <plot row="0" col="0">
+    <range bottom="2.148951" left="47.310000" top="4.100043" right="52.310000"/>
+    <limitY/>
+    <curve name="/bobble/bobble_balance_controller/bb_controller_status/Pitch" R="0" B="255" G="0"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="1" col="0">
+    <range bottom="-7.585824" left="47.310000" top="4.176665" right="52.310000"/>
+    <limitY/>
+    <curve name="/bobble/bobble_balance_controller/bb_controller_status/PitchRate" R="255" B="255" G="0"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="2" col="0">
+    <range bottom="-0.100000" left="47.310000" top="0.100000" right="52.310000"/>
+    <limitY/>
+    <curve name="/bobble/bobble_balance_controller/bb_controller_status/LeftMotorEffortCmd" R="0" B="128" G="128"/>
+    <curve name="/bobble/bobble_balance_controller/bb_controller_status/RightMotorEffortCmd" R="160" B="164" G="160"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="3" col="0">
+    <range bottom="638.943065" left="47.310000" top="649.614369" right="52.310000"/>
+    <limitY/>
+    <curve name="/bobble/bobble_balance_controller/bb_controller_status/LeftMotorPosition" R="160" B="164" G="160"/>
+    <curve name="/bobble/bobble_balance_controller/bb_controller_status/RightMotorPosition" R="128" B="0" G="128"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="4" col="0">
+    <range bottom="-0.146196" left="47.310000" top="5.354286" right="52.310000"/>
+    <limitY/>
+    <curve name="/bobble/bobble_balance_controller/bb_controller_status/LeftMotorVelocity" R="255" B="0" G="0"/>
+    <curve name="/bobble/bobble_balance_controller/bb_controller_status/RightMotorVelocity" R="128" B="0" G="128"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="5" col="0">
+    <range bottom="2.388077" left="47.310000" top="2.907375" right="52.310000"/>
+    <limitY/>
+    <curve name="/bobble/bobble_balance_controller/bb_controller_status/Roll" R="0" B="255" G="0"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot row="6" col="0">
+    <range bottom="-0.771208" left="47.310000" top="0.164719" right="52.310000"/>
+    <limitY/>
+    <curve name="/bobble/bobble_balance_controller/bb_controller_status/Yaw" R="0" B="0" G="128"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <currentPlotMatrix index="0"/>
+ </tabbed_widget>
+ <use_relative_time_offset enabled="1"/>
+ <Plugins>
+  <DataLoad_CSV>
+   <default time_axis=""/>
+  </DataLoad_CSV>
+  <DataLoad_ROS_bags>
+   <selected_topics list=""/>
+  </DataLoad_ROS_bags>
+  <ROS_Topic_Streamer>
+   <selected_topics list="/bobble/bobble_balance_controller/bb_controller_status"/>
+  </ROS_Topic_Streamer>
+  <RosoutPublisherROS/>
+  <TopicPublisherROS/>
+ </Plugins>
+ <previouslyLoadedStreamer name="ROS_Topic_Streamer"/>
+</root>
+
