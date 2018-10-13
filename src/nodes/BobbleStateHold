@@ -18,7 +18,7 @@ class BobbleStateHold(object):
         # Kluge to reset sim state until balance is active
         self.reset_state = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
         # Create a timer to execute the control loop
-        rospy.Timer(rospy.Duration(0.2), self._mainLoop)
+        rospy.Timer(rospy.Duration(0.0025), self._mainLoop)
         # Allow time for initialization of all needed nodes
         # Allow ROS to go to all callbacks.
         rospy.spin()

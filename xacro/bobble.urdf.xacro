@@ -20,7 +20,7 @@
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" >
       <robotNamespace>/bobble</robotNamespace>
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-      <controlPeriod>0.001</controlPeriod>
+      <controlPeriod>0.005</controlPeriod>
     </plugin>
     <plugin name='gazebo_ros_imu' filename='libgazebo_ros_imu.so'>
       <alwaysOn>true</alwaysOn>
