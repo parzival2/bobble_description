@@ -5,7 +5,6 @@
    <plot col="0" row="0">
     <range left="15.580000" top="188.996611" bottom="-188.995634" right="20.580000"/>
     <limitY/>
-    <curve B="128" G="0" name="/bobble/bobble_balance_controller/bb_controller_status/DesiredHeading" R="0"/>
     <curve B="128" G="128" name="/bobble/bobble_balance_controller/bb_controller_status/Heading" R="0"/>
     <transform value="noTransform"/>
    </plot>
