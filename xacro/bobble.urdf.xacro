@@ -25,7 +25,7 @@
     </plugin>
     <plugin name='gazebo_ros_imu' filename='libhector_gazebo_ros_imu.so'>
       <alwaysOn>true</alwaysOn>
-      <updateRate>100.0</updateRate>
+      <updateRate>200.0</updateRate>
       <bodyName>bno055_imu_link</bodyName>
       <topicName>/imu_bosch/data_raw</topicName>
       <gaussianNoise>0.02</gaussianNoise>
