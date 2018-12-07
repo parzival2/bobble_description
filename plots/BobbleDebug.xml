@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+ <tabbed_widget parent="main_window" name="Main Window">
+  <plotmatrix columns="1" tab_name="plot" rows="7">
+   <plot col="0" row="0">
+    <range left="15.580000" top="188.996611" bottom="-188.995634" right="20.580000"/>
+    <limitY/>
+    <curve B="128" G="128" name="/bobble/bobble_balance_controller/bb_controller_status/Heading" R="0"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="1">
+    <range left="15.580000" top="3.566365" bottom="-3.579040" right="20.580000"/>
+    <limitY/>
+    <curve B="0" G="0" name="/bobble/bobble_balance_controller/bb_controller_status/DesiredTurnRate" R="255"/>
+    <curve B="255" G="0" name="/bobble/bobble_balance_controller/bb_controller_status/TurnRate" R="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="2">
+    <range left="15.580000" top="-0.494474" bottom="-1.585905" right="20.580000"/>
+    <limitY/>
+    <curve B="0" G="0" name="/bobble/bobble_balance_controller/bb_controller_status/DesiredTilt" R="255"/>
+    <curve B="255" G="0" name="/bobble/bobble_balance_controller/bb_controller_status/Tilt" R="255"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="3">
+    <range left="15.580000" top="0.108086" bottom="-0.108444" right="20.580000"/>
+    <limitY/>
+    <curve B="164" G="160" name="/bobble/bobble_balance_controller/bb_controller_status/LeftMotorEffortCmd" R="160"/>
+    <curve B="0" G="128" name="/bobble/bobble_balance_controller/bb_controller_status/RightMotorEffortCmd" R="128"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="4">
+    <range left="15.580000" top="1.971608" bottom="-2.054590" right="20.580000"/>
+    <limitY/>
+    <curve B="128" G="128" name="/bobble/bobble_balance_controller/bb_controller_status/LeftMotorVelocity" R="0"/>
+    <curve B="164" G="160" name="/bobble/bobble_balance_controller/bb_controller_status/RightMotorVelocity" R="160"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="5">
+    <range left="15.580000" top="0.104506" bottom="-0.104719" right="20.580000"/>
+    <limitY/>
+    <curve B="255" G="0" name="/bobble/bobble_balance_controller/bb_controller_status/HeadingEffort" R="0"/>
+    <curve B="0" G="128" name="/bobble/bobble_balance_controller/bb_controller_status/TiltEffort" R="0"/>
+    <transform value="noTransform"/>
+   </plot>
+   <plot col="0" row="6">
+    <range left="15.580000" top="0.006278" bottom="-0.006265" right="20.580000"/>
+    <limitY/>
+    <curve B="0" G="0" name="/bobble/bobble_balance_controller/bb_controller_status/DesiredVelocity" R="255"/>
+    <curve B="0" G="128" name="/bobble/bobble_balance_controller/bb_controller_status/ForwardVelocity" R="0"/>
+    <transform value="noTransform"/>
+   </plot>
+  </plotmatrix>
+  <currentPlotMatrix index="0"/>
+ </tabbed_widget>
+ <use_relative_time_offset enabled="1"/>
+ <Plugins>
+  <DataLoad_CSV>
+   <default time_axis=""/>
+  </DataLoad_CSV>
+  <DataLoad_ROS_bags>
+   <selected_topics list=""/>
+  </DataLoad_ROS_bags>
+  <ROS_Topic_Streamer>
+   <selected_topics list="/bobble/bobble_balance_controller/bb_controller_status"/>
+  </ROS_Topic_Streamer>
+  <RosoutPublisherROS/>
+  <TopicPublisherROS/>
+ </Plugins>
+ <previouslyLoadedStreamer name="ROS_Topic_Streamer"/>
+</root>
+

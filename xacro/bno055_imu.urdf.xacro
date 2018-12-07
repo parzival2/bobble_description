@@ -25,7 +25,7 @@
 	</link>
 
 	<gazebo reference="bno055_imu_link">
-		<selfCollide>true</selfCollide>
+		<selfCollide>false</selfCollide>
 	</gazebo>
 
 	<joint name="bno055_imu_joint" type="fixed">

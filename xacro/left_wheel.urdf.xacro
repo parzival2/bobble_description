@@ -6,17 +6,17 @@
 
 	<link name="left_wheel_link">
 		<inertial>
-			<mass value="10.0"/>
-			<inertia ixx="0.02708333333" ixy="0.0" ixz="0.0" iyy="0.02708333333" iyz="0.0" izz="0.05"/>
+			<mass value="0.084"/>
+			<inertia ixx="0.00035" ixy="0.0" ixz="0.0" iyy="0.00035" iyz="0.0" izz="0.00035"/>
 		</inertial>
 		<visual>
-			<origin xyz="0.0 0.1 0.05" rpy="0.0 1.5707 1.5707"/>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 1.5707 1.5707"/>
 			<geometry name="left_wheel_link_visual">
   				<mesh filename="package://bobble_description/meshes/wheel.dae" scale="1.0 1.0 1.0"/>
 			</geometry>
   		</visual>
 		<collision>
-			<origin xyz="0.0 0.1 0.05" rpy="0.0 1.5707 1.5707"/>
+			<origin xyz="0.0 0.0 0.0" rpy="0.0 1.5707 1.5707"/>
             <geometry>
               <cylinder radius="0.05" length="0.05" />
             </geometry>
@@ -25,18 +25,17 @@
 	</link>
 
 	<gazebo reference="left_wheel_link">
-		<selfCollide>true</selfCollide>
+		<selfCollide>false</selfCollide>
 	</gazebo>
 
-	<joint name="left_wheel_hinge" type="revolute">
+	<joint name="left_wheel_hinge" type="continuous">
 		<parent link="${parent}"/>
 		<child link="left_wheel_link"/>
-		<origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+		<origin rpy="0 0 0" xyz="0.0 0.1 0.05"/>
 		<axis xyz="0 1 0"/>
-		<limit effort="30" lower="-2.6" upper="2.6" velocity="2.0"/>
 		<!-- <safety_controller k_velocity="0.5"/> -->
 		<!-- <joint_properties damping="100.0" friction="1000.0" /> -->
-    	<dynamics damping="0.9" friction="${3.0/7}"/>
+    	<dynamics damping="0.0" friction="0.0"/>
 	</joint>
 
 	<transmission name="left_wheel_transmission">
