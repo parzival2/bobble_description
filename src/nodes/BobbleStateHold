@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import rospy
 from state_machine.StateRegistry import IDLE
-from executive.msg import BobbleBotStatus
+from bobble_controllers.msg import BobbleBotStatus
 from gazebo_msgs.srv import *
 PKG = 'bobble_description'
 
