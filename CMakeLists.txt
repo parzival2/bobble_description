@@ -6,7 +6,6 @@ project(bobble_description)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
              rospy
-             executive
 )
 
 
@@ -19,7 +18,7 @@ catkin_python_setup()
 catkin_package(
 #  INCLUDE_DIRS include
    LIBRARIES ${PROJECT_NAME}
-   CATKIN_DEPENDS executive rospy
+   CATKIN_DEPENDS bobble_controllers rospy
 )
 
 catkin_install_python(PROGRAMS src/nodes/BobbleStateHold

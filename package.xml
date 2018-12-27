@@ -43,11 +43,10 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>rospy</build_depend>
-  <build_depend>executive</build_depend>
 
 
   <run_depend>rospy</run_depend>
-  <run_depend>executive</run_depend>
+  <run_depend>bobble_controllers</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

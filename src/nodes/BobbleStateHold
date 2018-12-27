@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import rospy
-from state_machine.StateRegistry import IDLE
 from bobble_controllers.msg import BobbleBotStatus
 from gazebo_msgs.srv import *
 PKG = 'bobble_description'
@@ -12,7 +11,7 @@ class BobbleStateHold(object):
         This simple node just keeps the bobblebot standing in sim until
         active control begins.
         """
-        self._ControlMode = IDLE
+        self._ControlMode = 0 # IDLE
         # Listen to bb_controller_status messages
         rospy.Subscriber("/bobble/bobble_balance_controller/bb_controller_status", BobbleBotStatus, self._controllerDataReceived)
         # Kluge to reset sim state until balance is active
@@ -25,7 +24,7 @@ class BobbleStateHold(object):
 
     def _mainLoop(self, _event):
         # Reset sim state until we're in active control. We fall over other-wise
-        if self._ControlMode == IDLE:
+        if self._ControlMode == 0:
             self._resetSimState()
 
     def _resetSimState(self):
