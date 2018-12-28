@@ -21,10 +21,14 @@ catkin_package(
    CATKIN_DEPENDS bobble_controllers rospy
 )
 
-catkin_install_python(PROGRAMS src/nodes/BobbleStateHold
-        DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
-
-
+catkin_install_python(
+   PROGRAMS
+   src/nodes/BobbleStateHold
+   src/nodes/KeyboardControl
+   src/nodes/JoystickControl
+   DESTINATION
+   ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ###########
 ## Build ##
