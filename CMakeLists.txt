@@ -8,8 +8,6 @@ find_package(catkin REQUIRED COMPONENTS
              rospy
 )
 
-
-
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
@@ -19,15 +17,6 @@ catkin_package(
 #  INCLUDE_DIRS include
    LIBRARIES ${PROJECT_NAME}
    CATKIN_DEPENDS bobble_controllers rospy
-)
-
-catkin_install_python(
-   PROGRAMS
-   src/nodes/BobbleStateHold
-   src/nodes/KeyboardControl
-   src/nodes/JoystickControl
-   DESTINATION
-   ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 ###########
@@ -58,6 +47,15 @@ catkin_install_python(
 #############
 ## Install ##
 #############
+
+catkin_install_python(
+   PROGRAMS
+   src/nodes/BobbleStateHold
+   src/nodes/KeyboardControl
+   src/nodes/JoystickControl
+   DESTINATION
+   ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 install(DIRECTORY launch
    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
