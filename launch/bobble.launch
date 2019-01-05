@@ -1,4 +1,4 @@
 <launch>
-	<param name="robot_description" command="$(find xacro)/xacro.py '$(find bobble_description)/xacro/bobble_world.urdf.xacro'" />
+	<param name="robot_description" command="$(find xacro)/xacro '$(find bobble_description)/xacro/bobble_world.urdf.xacro'" />
 	<node name="bobble_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model bobblebot" respawn="false" output="screen" />
 </launch>
