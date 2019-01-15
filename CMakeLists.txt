@@ -8,6 +8,10 @@ find_package(catkin REQUIRED COMPONENTS)
 
 catkin_package()
 
+set(GAZEBO_MODEL_PATH $ENV{HOME}/.gazebo/models)
+
+add_custom_target(COMMAND cmake -E make_directory ${GAZEBO_MODEL_PATH}/${PROJECT_NAME})
+
 #############
 ## Install ##
 #############
@@ -18,8 +22,11 @@ install(DIRECTORY launch
 install(DIRECTORY meshes
    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
+# copy my_robot meshes to gazebo models folder
 install(DIRECTORY meshes
-   DESTINATION $ENV{HOME}/.gazebo/models/${PROJECT_NAME}/meshes)
+  DESTINATION ${GAZEBO_MODEL_PATH}/${PROJECT_NAME}
+  FILES_MATCHING PATTERN "*.dae"
+)
 
 install(DIRECTORY xacro
    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
