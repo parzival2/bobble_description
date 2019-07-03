@@ -3,7 +3,9 @@
 <robot name="bobblebot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:include filename="$(find bobble_description)/xacro/bobble_chassis.urdf.xacro" />
+  <!--
   <xacro:include filename="$(find bobble_description)/xacro/camera.urdf.xacro" />
+  -->
   <xacro:include filename="$(find bobble_description)/xacro/bno055_imu.urdf.xacro" />
   <xacro:include filename="$(find bobble_description)/xacro/left_wheel.urdf.xacro" />
   <xacro:include filename="$(find bobble_description)/xacro/right_wheel.urdf.xacro" />
