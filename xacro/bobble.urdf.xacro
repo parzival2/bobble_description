@@ -3,12 +3,15 @@
 <robot name="bobblebot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:include filename="$(find bobble_description)/xacro/bobble_chassis.urdf.xacro" />
+  <xacro:include filename="$(find bobble_description)/xacro/camera.urdf.xacro" />
   <xacro:include filename="$(find bobble_description)/xacro/bno055_imu.urdf.xacro" />
   <xacro:include filename="$(find bobble_description)/xacro/left_wheel.urdf.xacro" />
   <xacro:include filename="$(find bobble_description)/xacro/right_wheel.urdf.xacro" />
 
   <xacro:bobble_chassis>
   </xacro:bobble_chassis>
+  <xacro:camera_macro parent="bobble_chassis_link">
+  </xacro:camera_macro>
   <xacro:bno055_imu parent="bobble_chassis_link">
   </xacro:bno055_imu>
   <xacro:left_wheel parent="bobble_chassis_link">
@@ -20,7 +23,7 @@
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" >
       <robotNamespace>/bobble</robotNamespace>
       <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-      <controlPeriod>0.005</controlPeriod>
+      <controlPeriod>0.002</controlPeriod>
       <legacyModeNS>false</legacyModeNS>
     </plugin>
     <plugin name='gazebo_ros_imu' filename='libhector_gazebo_ros_imu.so'>
