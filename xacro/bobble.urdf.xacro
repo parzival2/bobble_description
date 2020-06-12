@@ -3,15 +3,16 @@
 <robot name="bobblebot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:include filename="$(find bobble_description)/xacro/bobble_chassis.urdf.xacro" />
-  <xacro:include filename="$(find bobble_description)/xacro/camera.urdf.xacro" />
+  <xacro:include filename="$(find realsense_gazebo_plugin)/urdf/realsense-RS200.macro.xacro"/>
   <xacro:include filename="$(find bobble_description)/xacro/bno055_imu.urdf.xacro" />
   <xacro:include filename="$(find bobble_description)/xacro/left_wheel.urdf.xacro" />
   <xacro:include filename="$(find bobble_description)/xacro/right_wheel.urdf.xacro" />
 
   <xacro:bobble_chassis>
   </xacro:bobble_chassis>
-  <xacro:camera_macro parent="bobble_chassis_link">
-  </xacro:camera_macro>
+  <xacro:realsense-rs200 prefix="" parent="bobble_chassis_link">
+    <origin xyz="0 0 0.225" rpy="0 0 0" />   
+  </xacro:realsense-rs200>
   <xacro:bno055_imu parent="bobble_chassis_link">
   </xacro:bno055_imu>
   <xacro:left_wheel parent="bobble_chassis_link">
