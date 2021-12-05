@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 
+<!-- This xacro file contains visual elements only -->
+
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:macro name="bobble_chassis">
@@ -10,14 +12,14 @@
   	  		<mass value="2.043"/>
 	  		<inertia ixx="0.03" ixy="0.0" ixz="0.0" iyy="0.03" iyz="0.0" izz="0.03"/>
 		</inertial>
-		<visual>
-	  		<origin xyz="-0.05862 0.09227 -0.022" rpy="1.5707 0.0 0.0"/>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-  				<mesh filename="package://bobble_description/meshes/chassis.dae" scale="0.001 0.001 0.001"/>
+  				<mesh filename="package://bobble_description/meshes/chassis_grey.stl" scale="0.001 0.001 0.001"/>
             </geometry>
-   		</visual>
+        </visual>
 		<collision>
-	  		<origin xyz="0.0 0.0 0.10263" rpy="0.0 0.0 0.0"/>
+            <origin xyz="0.0 0.0 0.10263" rpy="0.0 0.0 0.0"/>
             <geometry>
               <box size="0.122 0.1129 0.19226" />
             </geometry>
@@ -27,6 +29,9 @@
 
 	<gazebo reference="bobble_chassis_link">
 		<selfCollide>false</selfCollide>
+        <material>
+            Gazebo/Gray
+        </material>
 	</gazebo>
 
 	</xacro:macro>

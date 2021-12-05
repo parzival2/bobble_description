@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find bobble_description)/xacro/materials/materials.xacro" />
+  <xacro:macro name="bobble_electronics" params="parent">
+	  <joint name="bobble_electronics_joint" type="fixed">
+		  <axis xyz="0 0.0 0.0" />
+		  <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
+		  <parent link="${parent}"/>
+		  <child link="bobble_electronics_link"/>
+	  </joint>
+	  <link name="bobble_electronics_link">
+		  <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			  <geometry>
+                      <mesh filename="package://bobble_description/meshes/electronics.stl" scale="0.001 0.001 0.001"/>
+			  </geometry>
+			  <material name="green"/>
+		  </visual>
+	  </link>
+
+	<gazebo reference="bobble_electronics_link">
+		<selfCollide>false</selfCollide>
+        <visual>
+            <material>
+                <ambient>0.05 0.3 0.05 0.75</ambient>  
+                <diffuse>0.05 0.3 0.05 0.75</diffuse>  
+                <specular>0.05 0.3 0.05 0.75</specular>  
+                <emissive>0.0 0.0 0.0 0.0</emissive>  
+            </material>
+        </visual>
+	</gazebo>
+
+  </xacro:macro>
+</robot>

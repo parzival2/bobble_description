@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<!-- This xacro file contains visual elements only -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find bobble_description)/xacro/materials/materials.xacro" />
+  <xacro:macro name="bobble_battery" params="parent">
+	  <joint name="bobble_battery_joint" type="fixed">
+		  <axis xyz="0 0.0 0.0" />
+		  <origin xyz="0.0 0 0.0" rpy="0 0 0"/>
+		  <parent link="${parent}"/>
+		  <child link="bobble_battery_link"/>
+	  </joint>
+	  <link name="bobble_battery_link">
+		  <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+			  <geometry>
+  				  <mesh filename="package://bobble_description/meshes/battery.stl" scale="0.001 0.001 0.001"/>
+			  </geometry>
+			  <material name="black"/>
+		  </visual>
+	  </link>
+
+	<gazebo reference="bobble_battery_link">
+		<selfCollide>false</selfCollide>
+        <material>Gazebo/Black</material>
+	</gazebo>
+
+
+  </xacro:macro>
+</robot>
