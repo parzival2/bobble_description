@@ -14,8 +14,12 @@ install(DIRECTORY launch
    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
 install(FILES
-        meshes/chassis.dae
-        meshes/wheel.dae
+        meshes/battery.stl
+        meshes/chassis_grey.stl
+        meshes/chassis_orange.stl
+        meshes/electronics.stl
+        meshes/realsense.stl
+        meshes/wheel.stl
    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshes)
 
 install(DIRECTORY xacro
