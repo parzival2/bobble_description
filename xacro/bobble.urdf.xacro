@@ -32,20 +32,20 @@
   </xacro:right_wheel>
 
   <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" >
-      <robotNamespace>/bobble</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-      <controlPeriod>0.002</controlPeriod>
-      <legacyModeNS>false</legacyModeNS>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <parameters>$(find bobble_description)/config/ros2_controllers.yaml</parameters>
+      <ros>
+        <namespace>/bobble</namespace>
+      </ros>
     </plugin>
-    <plugin name='gazebo_ros_imu' filename='libhector_gazebo_ros_imu.so'>
-      <alwaysOn>true</alwaysOn>
-      <updateRate>200.0</updateRate>
+    <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
       <bodyName>bno055_imu_link</bodyName>
       <topicName>/imu_bosch/data_raw</topicName>
+      <updateRate>200.0</updateRate>
       <gaussianNoise>0.02</gaussianNoise>
-      <xyzOffsets>0 0 0</xyzOffsets>
-      <rpyOffsets>0 0 0</rpyOffsets>
+      <ros>
+        <namespace>/bobble</namespace>
+      </ros>
     </plugin>
   </gazebo>
 

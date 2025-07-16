@@ -1,26 +1,38 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.8)
 project(bobble_description)
 
-find_package(catkin REQUIRED COMPONENTS
-   hector_gazebo_plugins
+# Default to C++17
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 17)
+endif()
+
+# Find dependencies
+find_package(ament_cmake REQUIRED)
+
+# Install directories
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
 )
 
-catkin_package(
-   CATKIN_DEPENDS
-   hector_gazebo_plugins
+install(DIRECTORY
+  worlds
+  DESTINATION share/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch
-   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY
+  meshes
+  DESTINATION share/${PROJECT_NAME}
+)
 
-install(FILES
-        meshes/battery.stl
-        meshes/chassis_grey.stl
-        meshes/chassis_orange.stl
-        meshes/electronics.stl
-        meshes/realsense.stl
-        meshes/wheel.stl
-   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshes)
+install(DIRECTORY
+  xacro
+  DESTINATION share/${PROJECT_NAME}
+)
 
-install(DIRECTORY xacro
-   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY
+  config
+  DESTINATION share/${PROJECT_NAME}
+)
+
+ament_package()
