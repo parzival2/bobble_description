@@ -24,10 +24,6 @@
 		</collision>
 	</link>
 
-	<gazebo reference="bno055_imu_link">
-		<selfCollide>false</selfCollide>
-	</gazebo>
-
 	<joint name="bno055_imu_joint" type="fixed">
 		<parent link="${parent}"/>
 		<child link="bno055_imu_link"/>

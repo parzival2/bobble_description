@@ -11,6 +11,7 @@
   <xacro:include filename="$(find bobble_description)/xacro/bno055_imu.urdf.xacro" />
   <xacro:include filename="$(find bobble_description)/xacro/left_wheel.urdf.xacro" />
   <xacro:include filename="$(find bobble_description)/xacro/right_wheel.urdf.xacro" />
+  <xacro:include filename="$(find bobble_description)/xacro/bobble.gazebo" />
 
   <xacro:bobble_chassis>
   </xacro:bobble_chassis>
@@ -30,23 +31,4 @@
   </xacro:left_wheel>
   <xacro:right_wheel parent="bobble_chassis_link">
   </xacro:right_wheel>
-
-  <gazebo>
-    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-      <parameters>$(find bobble_description)/config/ros2_controllers.yaml</parameters>
-      <ros>
-        <namespace>/bobble</namespace>
-      </ros>
-    </plugin>
-    <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
-      <bodyName>bno055_imu_link</bodyName>
-      <topicName>/imu_bosch/data_raw</topicName>
-      <updateRate>200.0</updateRate>
-      <gaussianNoise>0.02</gaussianNoise>
-      <ros>
-        <namespace>/bobble</namespace>
-      </ros>
-    </plugin>
-  </gazebo>
-
 </robot>
