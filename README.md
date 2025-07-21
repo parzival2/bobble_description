@@ -31,7 +31,7 @@ The `bobble_description` package provides the complete robot description for Bob
 
 **Package Information:**
 - **Version**: 1.0.0
-- **Maintainer**: Mike Moore (mike.moore@so.engineering)
+- **Maintainer**: Kalyan (r.kalyan.sreenivas@gmail.com)
 - **License**: BSD
 - **Build System**: ament_cmake (ROS2)
 
@@ -54,7 +54,6 @@ BobbleBot consists of the following main components:
   - Topic: `/bobble/imu_bosch/data_raw`
   - Update Rate: 200 Hz
   - Gaussian Noise: 0.02
-- **Camera**: Intel RealSense depth camera (configurable)
 - **Wheel Encoders**: Integrated with differential drive controller
 
 ### Actuators
@@ -342,8 +341,6 @@ This package has been migrated from ROS1 to ROS2. Key changes include:
 - **Gazebo Integration**: gazebo_ros_control → gazebo_ros2_control
 - **Plugin Updates**: Updated to ROS2-compatible Gazebo plugins
 
-For detailed migration information, see [MigrationPlan.md](MigrationPlan.md).
-
 ## Related Packages
 
 - [bobble_controllers](https://github.com/super-owesome/bobble_controllers) - Control algorithms for BobbleBot
@@ -351,7 +348,7 @@ For detailed migration information, see [MigrationPlan.md](MigrationPlan.md).
 
 ## Contributing
 
-This package is maintained by Mike Moore. For bug reports and feature requests, please use the appropriate issue tracker.
+This package is maintained by Kalyan but the original ROS implementation was done by Mike Moore. For bug reports and feature requests, please use the appropriate issue tracker.
 
 ## License
 
