@@ -1,0 +1,16 @@
+{
+    "editor.fontSize": 13,
+    "editor.fontFamily": "Cascadia Code Medium",
+    "window.zoomLevel": -0.4,
+    "python.languageServer": "None",
+    "python.autoComplete.extraPaths": [
+        "/opt/ros/jazzy/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/local/lib/python3.12/dist-packages",
+        "${workspaceFolder}/build/bobble_description"
+    ],
+    "cursorpyright.analysis.extraPaths": [
+        "/opt/ros/jazzy/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/local/lib/python3.12/dist-packages",
+        "${workspaceFolder}/build/bobble_description"
+    ]
+}
