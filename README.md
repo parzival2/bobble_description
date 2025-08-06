@@ -209,6 +209,10 @@ ros2 launch bobble_description bobble.launch.py x_pos:=1.0 y_pos:=-0.5 z_pos:=0.
 # Spawn robot higher (useful for testing)
 ros2 launch bobble_description bobble.launch.py z_pos:=0.2
 ```
+To test the differential_controller with a teleop command, use 
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap /cmd_vel:=/bobble_controller/cmd_vel -p stamped:=True
+```
 
 ## Configuration
 
