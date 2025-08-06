@@ -185,4 +185,4 @@ joint_state_broadcaster:
 - [x] Document joint states testing: `ros2 topic echo /joint_states`
 
 ## TODO List
-- [ ] Fix the wheels spinning continuously by increasing wheel friction or add damping for the wheel joints
+- [x] Fix the wheels spinning continuously by increasing wheel friction or add damping for the wheel joints

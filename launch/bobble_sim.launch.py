@@ -119,15 +119,28 @@ def launch_robot_nodes(context, *args, **kwargs):
         }],
         output='screen'
     )
-
-    # Joint state publisher
-    joint_state_publisher = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher',
-        namespace=robot_namespace,
+    # Controllers
+    robot_controllers = PathJoinSubstitution(
+        [
+            FindPackageShare('bobble_description'),
+            'config',
+            'ros2_controllers.yaml',
+        ]
     )
-    
+    joint_state_broadcaster_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_state_broadcaster'],
+    )
+    diff_drive_base_controller_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=[
+            'bobble_controller',
+            '--param-file',
+            robot_controllers,
+            ],
+    )
     # Entity spawner with position parameters
     spawn_args = [
         '-topic', f'{topic_prefix}/robot_description',
@@ -148,7 +161,10 @@ def launch_robot_nodes(context, *args, **kwargs):
         output='screen'
     )
     
-    return [robot_state_publisher, entity_spawner]
+    return [robot_state_publisher,
+    joint_state_broadcaster_spawner, 
+    diff_drive_base_controller_spawner,
+    entity_spawner]
 
 def generate_launch_description():
     return LaunchDescription([
@@ -206,10 +222,10 @@ def generate_launch_description():
             default_value='0.035',
             description='Z position of robot spawn point (wheel radius + small margin)'
         ),
+
+        # Robot state publisher with configurable namespace support
+        OpaqueFunction(function=launch_robot_nodes),
         
         # Start Gazebo simulation
-        OpaqueFunction(function=launch_gazebo_with_world),   
-        
-        # Robot state publisher with configurable namespace support
-        OpaqueFunction(function=launch_robot_nodes)
+        OpaqueFunction(function=launch_gazebo_with_world),
     ])
