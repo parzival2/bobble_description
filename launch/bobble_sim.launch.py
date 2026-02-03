@@ -2,7 +2,7 @@
 
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
-from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.launch_description_sources import PythonLaunchDescriptionSource, FrontendLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, Command, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
@@ -117,6 +117,9 @@ def launch_robot_nodes(context, *args, **kwargs):
                 ])
             ])
         }],
+        remappings=[
+            ('joint_states', '/joint_states'),  # Use global joint_states from joint_state_broadcaster
+        ],
         output='screen'
     )
     # Controllers
@@ -228,4 +231,15 @@ def generate_launch_description():
         
         # Start Gazebo simulation
         OpaqueFunction(function=launch_gazebo_with_world),
+        
+        # Foxglove bridge for visualization
+        IncludeLaunchDescription(
+            FrontendLaunchDescriptionSource([
+                PathJoinSubstitution([
+                    FindPackageShare('foxglove_bridge'),
+                    'launch',
+                    'foxglove_bridge_launch.xml'
+                ])
+            ])
+        ),
     ])
