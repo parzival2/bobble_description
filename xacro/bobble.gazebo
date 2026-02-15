@@ -7,7 +7,7 @@
         <visualize>true</visualize>
         <topic>/bobble/imu</topic>
         <enable_metrics>true</enable_metrics>
-        <gz_frame_id>imu_link</gz_frame_id>
+        <gz_frame_id>bno055_imu_link</gz_frame_id>
         </sensor>
     </gazebo>
 

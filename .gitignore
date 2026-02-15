@@ -9,4 +9,3 @@ cfg/cpp
 site
 *.pyc
 utils/data/*
-CLAUDE.md
