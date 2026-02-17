@@ -3,7 +3,7 @@
     <gazebo reference="bno055_imu_link">
         <sensor name="imu" type="imu">
         <always_on>1</always_on>
-        <update_rate>100</update_rate>
+        <update_rate>500</update_rate>
         <visualize>true</visualize>
         <topic>/bobble/imu</topic>
         <enable_metrics>true</enable_metrics>
@@ -17,17 +17,17 @@
           <plugin>gz_ros2_control/GazeboSimSystem</plugin>
         </hardware>
         <joint name="left_wheel_hinge">
-          <command_interface name="velocity">
-            <param name="min">-1</param>
-            <param name="max">1</param>
+          <command_interface name="effort">
+            <param name="min">-1.0</param>
+            <param name="max">1.0</param>
           </command_interface>
           <state_interface name="position"/>
           <state_interface name="velocity"/>
         </joint>
         <joint name="right_wheel_hinge">
-          <command_interface name="velocity">
-            <param name="min">-1</param>
-            <param name="max">1</param>
+          <command_interface name="effort">
+            <param name="min">-1.0</param>
+            <param name="max">1.0</param>
           </command_interface>
           <state_interface name="position"/>
           <state_interface name="velocity"/>

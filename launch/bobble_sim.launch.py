@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource, FrontendLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, Command, PathJoinSubstitution
 from launch_ros.actions import Node
@@ -135,11 +135,11 @@ def launch_robot_nodes(context, *args, **kwargs):
         executable='spawner',
         arguments=['joint_state_broadcaster'],
     )
-    diff_drive_base_controller_spawner = Node(
+    effort_controller_spawner = Node(
         package='controller_manager',
         executable='spawner',
         arguments=[
-            'bobble_controller',
+            'effort_controller',
             '--param-file',
             robot_controllers,
             ],
@@ -165,8 +165,8 @@ def launch_robot_nodes(context, *args, **kwargs):
     )
     
     return [robot_state_publisher,
-    joint_state_broadcaster_spawner, 
-    diff_drive_base_controller_spawner,
+    joint_state_broadcaster_spawner,
+    effort_controller_spawner,
     entity_spawner]
 
 def generate_launch_description():
@@ -232,14 +232,19 @@ def generate_launch_description():
         # Start Gazebo simulation
         OpaqueFunction(function=launch_gazebo_with_world),
         
-        # Foxglove bridge for visualization
-        IncludeLaunchDescription(
-            FrontendLaunchDescriptionSource([
-                PathJoinSubstitution([
-                    FindPackageShare('foxglove_bridge'),
-                    'launch',
-                    'foxglove_bridge_launch.xml'
-                ])
-            ])
+        # Foxglove bridge for visualization (delayed to let other nodes initialize)
+        TimerAction(
+            period=5.0,
+            actions=[
+                IncludeLaunchDescription(
+                    FrontendLaunchDescriptionSource([
+                        PathJoinSubstitution([
+                            FindPackageShare('foxglove_bridge'),
+                            'launch',
+                            'foxglove_bridge_launch.xml'
+                        ])
+                    ])
+                ),
+            ],
         ),
     ])
